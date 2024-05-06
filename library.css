@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: fantasy;
     box-sizing: border-box;
 }
+
 .container {
     width: 100%;
     height: 100vh;
@@ -14,13 +15,14 @@
     justify-content: flex-start; /* Align items at the top */
     color: white;
     background-image: url('media/richard.jpg');
-    background-size: cover; /* Cover the entire container */
+    background-size: contain; /* Cover the entire container */
     background-position: center; /* Center the background image */
 }
 
 .title {
     color: black;
-    width: 400px;
+    width: 90%; /* Adjusted width */
+    max-width: 400px; /* Added max-width to limit width on larger screens */
     padding: 25px 35px;
     text-align: center;
     border-radius: 20px;
@@ -31,24 +33,34 @@
     display: flex;
     justify-content: center; /* Center the music player */
     flex-grow: 0; /* Allow the container to grow to fill remaining space */
-    margin-top: 130px;
+    margin-top: 10%; /* Adjusted margin for smaller screens */
 }
 
 .music-player {
-    width: 400px;
+    width: 90%; /* Adjusted width */
+    max-width: 400px; /* Added max-width to limit width on larger screens */
     padding: 25px 35px;
     text-align: center;
     border-radius: 20px;
     margin-bottom: 10px;
-    
 }
 
 .music-player a {
-    
     display: block;
     margin-bottom: 10px; /* Add some bottom margin between the lines */
     color: red; /* Set link color */
     text-decoration: none; /* Remove underline */
     padding: 5px 10px; /* Add padding to the links */
     margin-bottom: 10px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .title {
+        width: 400px; /* Reset width for larger screens */
+    }
+    
+    .music-player {
+        width: 400px; /* Reset width for larger screens */
+    }
 }
